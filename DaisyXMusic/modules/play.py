@@ -123,17 +123,6 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     image6 = image4.convert("RGBA")
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
-    draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
-    draw.text((205, 590), f"Duration: {duration}", (255, 255, 255), font=font)
-    draw.text((205, 630), f"Views: {views}", (255, 255, 255), font=font)
-    draw.text(
-        (205, 670),
-        f"Added By: {requested_by}",
-        (255, 255, 255),
-        font=font,
-    )
     img.save("final.png")
     os.remove("temp.png")
     os.remove("background.png")
@@ -593,12 +582,12 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/Bukan_guudlooking"),
+                    InlineKeyboardButton("⏯ Menu", callback_data="menu"),
                 ],
                 [
-                    InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                    InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                    InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/VirtualMusicChannel"),
+                    InlineKeyboardButton(text="⛑ Group", url=f"https://t.me/GroupVirtualMusic"),
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
             ]
@@ -676,14 +665,15 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                        InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                        InlineKeyboardButton("👑 Owner", url=f"https://t.me/Bukan_guudlooking"),
+                        InlineKeyboardButton("⏯ Menu", callback_data="menu"),
                     ],
                     [
-                        InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                        InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                        InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/VirtualMusicChannel"),
+                        InlineKeyboardButton(text="⛑ Group", url=f"https://t.me/GroupVirtualMusic"),
                     ],
-                    [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+                    [
+                        InlineKeyboardButton(text="❌ Close", callback_data="cls")],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -824,12 +814,12 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                InlineKeyboardButton("👑 Owner", url=f"https://t.me/Bukan_guudlooking"),
+                InlineKeyboardButton("⏯ Menu", callback_data="menu"),
             ],
             [
-                InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/VirtualMusicChannel"),
+                InlineKeyboardButton(text="⛑ Group", url=f"https://t.me/GroupVirtualMusic"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
@@ -967,10 +957,13 @@ async def deezer(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                InlineKeyboardButton("👑 Owner", url=f"https://t.me/Bukan_guudlooking"),
+                InlineKeyboardButton("⏯ Menu", callback_data="menu"),
             ],
-            [InlineKeyboardButton(text="Listen On Deezer 🎬", url=f"{url}")],
+            [
+                InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/VirtualMusicChannel"),
+                InlineKeyboardButton(text="⛑ Group", url=f"https://t.me/GroupVirtualMusic"),
+            ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
     )
@@ -1063,7 +1056,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @DaisyXmusic to your Group and try again</b>",
+                        "\n\nOr manually add @AsistenVirtualMusic to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -1108,7 +1101,7 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [
                 InlineKeyboardButton(
-                    text="Join Updates Channel", url=f"https://t.me/{updateschannel}"
+                    text="Join Updates Channel", url=f"https://t.me/VirtualMusicChannel"
                 )
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
@@ -1209,12 +1202,12 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                InlineKeyboardButton("👑 Owner", url=f"https://t.me/Bukan_guudlooking"),
+                InlineKeyboardButton("⏯ Menu", callback_data="menu"),
             ],
             [
-                InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/VirtualMusicChannel"),
+                InlineKeyboardButton(text="⛑ Group", url=f"https://t.me/GroupVirtualMusic"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
